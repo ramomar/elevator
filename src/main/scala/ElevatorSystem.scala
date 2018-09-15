@@ -45,7 +45,7 @@ trait ElevatorSystem {
   */
 class ElevatorSystemController(protected val elevatorCount: Int) extends ElevatorSystem {
   private val elevators: Map[Int, Elevator] =
-    Map((1 to elevatorCount).map(n => n -> new Elevator(id = n, initialFloor = 0)): _*)
+    Map((0 until elevatorCount).map(n => n -> new Elevator(id = n, initialFloor = 0)): _*)
 
   def elevatorState(elevator: Int): ElevatorState =
     elevators(elevator).state
