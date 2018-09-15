@@ -3,46 +3,17 @@ import math.abs
 trait ElevatorSystem {
   protected[this] val elevatorCount: Int
 
-  /** Gets the state of any elevator
-    *
-    *  @param elevator the id of the elevator
-    *  @return an instance of ElevatorState
-    */
   def elevatorState(elevator: Int): ElevatorState
 
-  /** Gets the state of all elevators
-    *
-    *  @return a map where the id of the elevator is the key to its state
-    */
   def elevatorsState: Map[Int, ElevatorState]
 
-  /** Adds a stop to any elevator
-    *
-    *  @param elevator the id of the elevator
-    *  @param floor the floor to add
-    *  @return Unit
-    */
   def addStopToElevator(elevator: Int, floor: Int): Unit
 
-  /** Find the best elevator to schedule for pickup
-    *
-    *  @param floor the floor where we are going to pickup passengers
-    *  @return the id of the elevator programmed for pickup
-    */
   def bestElevatorToScheduleForPickup(floor: Int): Int
 
-  /** Steps the simulation
-    *
-    *  @return Unit
-    */
   def step(): Unit
 }
 
-/** The controller for the alarm system
-  *
-  *  @constructor creates a new instance of a new elevator system controller
-  *  @param elevatorCount max number of elevators
-  */
 class ElevatorSystemController(protected val elevatorCount: Int) extends ElevatorSystem {
   private val elevators: Map[Int, Elevator] =
     Map((0 until elevatorCount).map(n => n -> new Elevator(id = n, initialFloor = 0)): _*)
