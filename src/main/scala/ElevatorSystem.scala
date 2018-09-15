@@ -53,6 +53,7 @@ class ElevatorSystemController(protected val elevatorCount: Int) extends Elevato
   def elevatorsState: Map[Int, ElevatorState] =
     elevators.mapValues(_.state)
 
+  // May be a good idea to return current stops for this in elevator in order to update an UI.
   def addStopToElevator(elevator: Int, floor: Int): Unit =
     elevators(elevator).addStop(floor)
 
