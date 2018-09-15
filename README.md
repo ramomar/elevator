@@ -41,7 +41,7 @@ My approach is a really simple one:
   - Elevator A has as goal to reach floor 0 and is currently on floor 2. 
   - Elevator B has as goal to reach floor 1 and is currently on floor 4.
   - Algorithm selects elevator B.
-  - Explanation: [we pick the elevator that minimizes distance between pickup floor and elevator goal floor.](https://github.com/ramomar/elevator/blob/bc7cff45fc14bea21bedf311bc8c65bdfcd39690/src/main/scala/ElevatorSystem.scala#L73)
+  - Explanation: [we pick the elevator that minimizes distance between pickup floor and elevator goal floor.](https://github.com/ramomar/elevator/blob/master/src/main/scala/ElevatorSystem.scala#L73)
     
 
 ### How it is implemented?
